@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -19,5 +19,5 @@ public class User {
     private String passwordHash; // Hashed password for authentication
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Service> appointments; // Collection of appointments made by the user
+    private List<Service> appointments; // Collection of appointments made by the user
 }
